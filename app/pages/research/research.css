@@ -1,0 +1,1 @@
+.note-item{padding:10;border-left:solid 2px white}.note-item.positive{border-left:solid 2px lightseagreen}.note-item.negative{border-left:solid 2px lightcoral}.note-item .small-label{font-size:12;font-weight:100}.note-item .medium-label{font-size:16;font-weight:400}.small-spacing{margin:5}.medium-spacing{list-style:none;margin:10}.native-btn-container Button{margin:10;height:30}

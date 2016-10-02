@@ -1,8 +1,7 @@
 <GridLayout>
-    <ListView [items]="contacts" class="small-spacing">
+    <ListView [items]="contacts" class="small-spacing" class="max-height: 400px;">
         <template let-item="item">
             <Label [text]="item" class="medium-spacing"></Label>
         </template>
     </ListView>
-    <Button text="Research View" class="primary-button" (tap)="goToResearch()"></Button>
 </GridLayout>

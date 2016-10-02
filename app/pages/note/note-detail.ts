@@ -2,7 +2,7 @@
  * Created by yxzhang on 9/29/16.
  */
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from '@angular/router';
+// import { ActivatedRoute } from '@angular/router';
 import { LocalNoteService } from "../../services/note/localNoteService";
 import dialogs = require("ui/dialogs");
 
@@ -15,7 +15,7 @@ import dialogs = require("ui/dialogs");
 export class NoteDetailComponent implements OnInit {
     private noteId: String;
 
-    constructor(private localNoteService: LocalNoteService, private route: ActivatedRoute) {
+    constructor(private localNoteService: LocalNoteService) {
         // this.noteId = route.snapshot.params['id'];
     }
 

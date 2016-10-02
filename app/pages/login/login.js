@@ -21,7 +21,8 @@ var LoginComponent = (function () {
     LoginComponent.prototype.submit = function () {
         var _this = this;
         this.userService.login(this.user)
-            .then(function (response) {
+            .map(function (response) { return response.json(); })
+            .subscribe(function (response) {
             global.token = response["_body"].userinfo.token;
             console.debug(global.token);
             _this.router.navigate(["/research"]);

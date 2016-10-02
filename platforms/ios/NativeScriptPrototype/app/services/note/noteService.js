@@ -12,6 +12,9 @@ var NoteService = (function () {
         this.http = http;
         this.config = new app_config_1.Config();
     }
+    // constructor() {
+    //     this.config = new Config();
+    // }
     NoteService.prototype.getNotes = function () {
         console.debug("getting notes from " + this.config.server);
         var url = "http://" + this.config.server + "/restapi/2.0/thread/?expand=thread;entry;entities;entity;source;submitter;&outputformat=json&page=1&rpp=20&showpermission=true&sortby=lastediteddate&sortorder=desc";
@@ -20,6 +23,16 @@ var NoteService = (function () {
         headers.append("Content-Type", "application/x-www-form-urlencoded");
         headers.append("Authorization", "Basic [token" + global.token + "token]");
         return this.http.post(url, '', { headers: headers });
+        // var http = require("http");
+        // let headers = [];
+        // headers.push({"Content-Type": "application/x-www-form-urlencoded"});
+        // headers.push({"Authorization": "Basic [token" + global.token + "token]"});
+        //
+        // return http.request({
+        //     url: url,
+        //     method: "POST",
+        //     headers: headers
+        // });
     };
     NoteService = __decorate([
         core_1.Injectable(), 

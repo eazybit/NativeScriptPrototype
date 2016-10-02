@@ -25,7 +25,7 @@ var ResearchComponent = (function () {
         var _this = this;
         var options = {
             title: this.notes[event.index]["title"].toString(),
-            // message: this.notes[event.index]["id"].toString(),
+            message: this.notes[event.index]["id"].toString(),
             cancelButtonText: "Cancel",
             actions: ["Download", "Detail", "Edit", "Delete", "Add Sidenote"]
         };
@@ -55,6 +55,9 @@ var ResearchComponent = (function () {
             this.localNoteService.saveNoteLocally(noteId, noteStr);
         }
         if (result === "Detail") {
+            var note = this.notes[index];
+            var noteId = note["id"];
+            this.router.navigate(["/note-detail", noteId]);
         }
         else if (result !== "Cancel") {
             alert(result);

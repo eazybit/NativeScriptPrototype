@@ -5,7 +5,7 @@ var AppComponent = (function () {
     }
     AppComponent = __decorate([
         core_1.Component({
-            selector: "natigation-component",
+            selector: "navigation-component",
             templateUrl: "./components/app.component.html"
         }), 
         __metadata('design:paramtypes', [])

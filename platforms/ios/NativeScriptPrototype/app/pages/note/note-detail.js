@@ -3,12 +3,11 @@
  * Created by yxzhang on 9/29/16.
  */
 var core_1 = require("@angular/core");
-var router_1 = require('@angular/router');
+// import { ActivatedRoute } from '@angular/router';
 var localNoteService_1 = require("../../services/note/localNoteService");
 var NoteDetailComponent = (function () {
-    function NoteDetailComponent(localNoteService, route) {
+    function NoteDetailComponent(localNoteService) {
         this.localNoteService = localNoteService;
-        this.route = route;
         // this.noteId = route.snapshot.params['id'];
     }
     NoteDetailComponent.prototype.ngOnInit = function () {
@@ -24,7 +23,7 @@ var NoteDetailComponent = (function () {
             providers: [localNoteService_1.LocalNoteService],
             styleUrls: ["pages/note/note-detail.css"]
         }), 
-        __metadata('design:paramtypes', [localNoteService_1.LocalNoteService, router_1.ActivatedRoute])
+        __metadata('design:paramtypes', [localNoteService_1.LocalNoteService])
     ], NoteDetailComponent);
     return NoteDetailComponent;
 }());

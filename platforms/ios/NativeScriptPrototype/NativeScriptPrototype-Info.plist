@@ -62,6 +62,8 @@
       <string>UIInterfaceOrientationLandscapeLeft</string>
       <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
+    <key>NSContactsUsageDescription</key>
+    <string>Test Contacts</string>
     <key>NSAppTransportSecurity</key>
     <dict>
       <key>NSAllowsArbitraryLoads</key>
@@ -70,8 +72,12 @@
       <dict>
         <key>gencos.com</key>
         <dict>
+          <key>NSIncludesSubdomains</key>
+          <true/>
           <key>NSExceptionAllowsInsecureHTTPLoads</key>
           <true/>
+          <key>NSRequiresCertificateTransparency</key>
+          <false/>
         </dict>
       </dict>
     </dict>

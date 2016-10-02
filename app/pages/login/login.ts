@@ -26,7 +26,8 @@ export class LoginComponent implements OnInit {
 
     submit() {
         this.userService.login(this.user)
-            .then(
+            .map(response => response.json())
+            .subscribe(
                 (response) => {
                     global.token = response["_body"].userinfo.token;
                     console.debug(global.token);

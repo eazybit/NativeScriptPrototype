@@ -33,7 +33,7 @@ export class ResearchComponent implements OnInit {
     onItemTap(event) {
         var options = {
             title: this.notes[event.index]["title"].toString(),
-            // message: this.notes[event.index]["id"].toString(),
+            message: this.notes[event.index]["id"].toString(),
             cancelButtonText: "Cancel",
             actions: ["Download", "Detail", "Edit", "Delete", "Add Sidenote"]
         };
@@ -63,9 +63,9 @@ export class ResearchComponent implements OnInit {
             let noteStr = JSON.stringify(note);
             this.localNoteService.saveNoteLocally(noteId, noteStr);
         } if (result === "Detail") {
-            // let note = this.notes[index];
-            // let noteId = note["id"];
-            // this.router.navigate(["/note-detail", noteId]);
+            let note = this.notes[index];
+            let noteId = note["id"];
+            this.router.navigate(["/note-detail", noteId]);
         } else if (result !== "Cancel"){
             alert(result);
         }

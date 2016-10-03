@@ -24,6 +24,7 @@ export class UserService {
 
     login(user: User) {
         console.debug("logging in as " + user.usr + " on server " + this.config.server);
+        // let url = "https://www.google.com/";
         let url = "http://tamaledev.gencos.com/restapi/2.0/token/?outputformat=json";
         console.debug("url: " + url);
         let headers = new Headers();
@@ -31,10 +32,15 @@ export class UserService {
         headers.append("username", "admin");
         headers.append("Authorization", "Basic Gh+VN4+UprI=");
 
-        return this.http.request(
-            url,
-            { headers: headers, method: "POST", body: 'test' }
-        );
+        try {
+            return this.http.request(
+                url,
+                { headers: headers, method: "POST", body: 'test' }
+            );
+        } catch(e) {
+            console.log(e);
+        }
+
 
         // var http = require("http");
         // var headers = [];

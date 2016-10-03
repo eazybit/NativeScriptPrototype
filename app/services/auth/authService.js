@@ -17,13 +17,19 @@ var UserService = (function () {
     // }
     UserService.prototype.login = function (user) {
         console.debug("logging in as " + user.usr + " on server " + this.config.server);
+        // let url = "https://www.google.com/";
         var url = "http://tamaledev.gencos.com/restapi/2.0/token/?outputformat=json";
         console.debug("url: " + url);
         var headers = new http_1.Headers();
         headers.append("Content-Type", "application/json");
         headers.append("username", "admin");
         headers.append("Authorization", "Basic Gh+VN4+UprI=");
-        return this.http.request(url, { headers: headers, method: "POST", body: 'test' });
+        try {
+            return this.http.request(url, { headers: headers, method: "POST", body: 'test' });
+        }
+        catch (e) {
+            console.log(e);
+        }
         // var http = require("http");
         // var headers = [];
         // headers.push({"Content-Type": "application/json"});

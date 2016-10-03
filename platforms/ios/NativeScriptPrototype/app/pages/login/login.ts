@@ -29,7 +29,13 @@ export class LoginComponent implements OnInit {
             .map(response => response.json())
             .subscribe(
                 (response) => {
-                    global.token = response["_body"].userinfo.token;
+                    console.log("log in successful");
+                    if(response.hasOwnProperty("_body")) {
+                        global.token = response["_body"].userinfo.token;
+                    }
+                    else if(response.hasOwnProperty("userinfo")){
+                        global.token = response["userinfo"].token;
+                    }
                     console.debug(global.token);
                     this.router.navigate(["/research"]);
                 },

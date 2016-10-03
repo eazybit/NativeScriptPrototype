@@ -6,10 +6,9 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { NativeScriptHttpModule } from "nativescript-angular/http";
 import { NativeScriptModule } from "nativescript-angular/platform";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
-// import { LoginComponent } from "./pages/login/login";
-// import { ResearchComponent } from "./pages/research/research";
-// import { ContactComponent } from "./pages/contact/contact";
-
+import { LoginComponent } from "./pages/login/login";
+import { ResearchComponent } from "./pages/research/research";
+import { ContactComponent } from "./pages/contact/contact";
 
 import { AppComponent } from "./components/app.component";
 import { routes, navigatableComponents } from "./configs/app.routing";
@@ -27,7 +26,8 @@ import { routes, navigatableComponents } from "./configs/app.routing";
         AppComponent,
         ...navigatableComponents
     ],
-    // entryComponents: [LoginComponent, ResearchComponent, ContactComponent],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+
+    entryComponents: [LoginComponent, ResearchComponent, ContactComponent],
 })
 export class AppModule {}

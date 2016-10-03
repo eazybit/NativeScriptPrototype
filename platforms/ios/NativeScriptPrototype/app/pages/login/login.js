@@ -23,7 +23,13 @@ var LoginComponent = (function () {
         this.userService.login(this.user)
             .map(function (response) { return response.json(); })
             .subscribe(function (response) {
-            global.token = response["_body"].userinfo.token;
+            console.log("log in successful");
+            if (response.hasOwnProperty("_body")) {
+                global.token = response["_body"].userinfo.token;
+            }
+            else if (response.hasOwnProperty("userinfo")) {
+                global.token = response["userinfo"].token;
+            }
             console.debug(global.token);
             _this.router.navigate(["/research"]);
         }, function (e) {

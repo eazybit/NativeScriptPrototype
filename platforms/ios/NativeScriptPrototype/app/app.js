@@ -7,9 +7,9 @@ var forms_1 = require("nativescript-angular/forms");
 var http_1 = require("nativescript-angular/http");
 var platform_1 = require("nativescript-angular/platform");
 var router_1 = require("nativescript-angular/router");
-// import { LoginComponent } from "./pages/login/login";
-// import { ResearchComponent } from "./pages/research/research";
-// import { ContactComponent } from "./pages/contact/contact";
+var login_1 = require("./pages/login/login");
+var research_1 = require("./pages/research/research");
+var contact_1 = require("./pages/contact/contact");
 var app_component_1 = require("./components/app.component");
 var app_routing_1 = require("./configs/app.routing");
 var AppModule = (function () {
@@ -27,8 +27,8 @@ var AppModule = (function () {
             declarations: [
                 app_component_1.AppComponent
             ].concat(app_routing_1.navigatableComponents),
-            // entryComponents: [LoginComponent, ResearchComponent, ContactComponent],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [app_component_1.AppComponent],
+            entryComponents: [login_1.LoginComponent, research_1.ResearchComponent, contact_1.ContactComponent],
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);
